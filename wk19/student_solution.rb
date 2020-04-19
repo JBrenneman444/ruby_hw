@@ -101,3 +101,49 @@ def multiply_each_by_five arr
     p arr.map {|n| n * 5}
 end
 multiply_each_by_five(numbers)
+
+# -----------------------------------------------------------------------
+# METHODS with HASHES
+# -----------------------------------------------------------------------
+
+# Use the following given hashes to solve the problems below
+
+book = {
+  title: 'The Great Gatsby',
+  author: 'F Scott Fitzgerald',
+  year: 1925,
+  price: 10
+}
+
+lamp = {
+  type: 'reading',
+  brand: 'Ikea',
+  price: 25
+}
+
+table = {
+  type: 'bed side',
+  brand: 'Crate & Barrel',
+  color: 'birch',
+  price: 50
+}
+# Write a method named print_price that will take in any hash and return the price of the item.
+
+def print_price(object_for_sale={})
+    puts "Object for Sale: #{object_for_sale}"
+    puts "Price: #{object_for_sale[:price]}"
+end
+
+print_price(book)
+print_price(lamp)
+print_price(table)
+
+# Write a method named print_item_sums that will take in two hashes and will return the sum of the prices for the items in the hashes.
+
+def print_item_sums(object1={},object2={})
+    puts "Object1's price is: #{object1[:price]}"
+    puts "Object2's price is: #{object2[:price]}"
+    puts "Total price: #{object1[:price] + object2[:price]}"
+end
+
+print_item_sums(book,lamp)
