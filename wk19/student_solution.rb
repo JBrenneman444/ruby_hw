@@ -65,3 +65,19 @@ p nums.reject {|n| n % 3 == 0}
 
 # use .select to return all the numbers divisible by 5
 p nums.select {|n| n % 5 == 0}
+
+# -----------------------------------------------------------------------
+# COLORS ARRAY
+# -----------------------------------------------------------------------
+
+colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+# Print out a random color.
+p colors.sample
+
+# Print out the colors array in reverse order.
+p colors.reverse
+
+# Print out all of the colors in the array with all capital letters.
+colors.map {|string| print "#{string.upcase} "}
+p "\n"
