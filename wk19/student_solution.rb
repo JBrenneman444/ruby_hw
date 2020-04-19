@@ -163,3 +163,29 @@ for i in (1...1000) do
     end
 end
 p sum
+
+# -----------------------------------------------------------------------
+# METHODS with HASHES
+# -----------------------------------------------------------------------
+
+# Write a method called check_prime? that will test whether a number is Prime. The method will return true if Prime, false if not.
+def is_prime? test_number     
+    Math.sqrt(test_number).to_i.downto(2).each {|i| return false if test_number % i == 0} && test_number > 1
+end
+p is_prime?(4)
+
+# Write another method called get_primes that will print all the Primes up to an arbitrary limit. For example, if you invoke your method with get_primes 100, it will print all the Prime numbers up to and including 100.
+
+# This method can call on the previous check_prime? method.
+
+def get_primes limit_number
+    prime_number_array = []
+    for i in (1..limit_number) do
+        if is_prime?(i)
+            prime_number_array << i
+        end
+    end
+    prime_number_array
+end
+
+p get_primes(100)
