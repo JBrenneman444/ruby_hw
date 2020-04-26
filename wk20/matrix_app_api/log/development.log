@@ -224,3 +224,23 @@ Migrating to ChangeTableName (20200426041551)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mCharacter Create (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "description") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Agent Smith"], ["description", "bad dude"]]
   [1m[35m (23.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCharacter Update (0.6ms)[0m  [1m[33mUPDATE "characters" SET "img_url" = $1 WHERE "characters"."id" = $2[0m  [["img_url", "a URL"], ["id", 1]]
+  [1m[35m (75.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCharacter Update (0.4ms)[0m  [1m[33mUPDATE "characters" SET "img_url" = $1 WHERE "characters"."id" = $2[0m  [["img_url", "a URL"], ["id", 2]]
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCharacter Update (0.4ms)[0m  [1m[33mUPDATE "characters" SET "img_url" = $1 WHERE "characters"."id" = $2[0m  [["img_url", "a URL"], ["id", 3]]
+  [1m[35m (53.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCharacter Update (0.4ms)[0m  [1m[33mUPDATE "characters" SET "img_url" = $1 WHERE "characters"."id" = $2[0m  [["img_url", "a URL"], ["id", 4]]
+  [1m[35m (30.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCharacter Destroy (0.4ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 4]]
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCharacter Create (0.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "description", "img_url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "The Oracle"], ["description", "wise chick"], ["img_url", "a URL"]]
+  [1m[35m (61.5ms)[0m  [1m[35mCOMMIT[0m
