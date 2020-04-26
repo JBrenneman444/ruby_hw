@@ -318,3 +318,61 @@ Processing by TweetsController#show as HTML
 Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 2992)
 
 
+Started GET "/tweets" for ::1 at 2020-04-26 12:57:06 -0700
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.8ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.8ms | Allocations: 3153)
+
+
+Started GET "/tweets" for ::1 at 2020-04-26 12:57:27 -0700
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 1005)
+
+
+Started GET "/tweets" for ::1 at 2020-04-26 12:57:45 -0700
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (0.7ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.7ms | Allocations: 1004)
+
+
+Started POST "/tweets" for ::1 at 2020-04-26 12:59:12 -0700
+Processing by TweetsController#create as */*
+  Parameters: {"tweets"=>{"title"=>"Covid19 will destroy the world!", "content"=>"This tweet shows how CV19 is quickly decimating every part of society.", "author"=>"The WHO"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 121)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: tweet):
+  
+app/controllers/tweets_controller.rb:28:in `tweet_params'
+app/controllers/tweets_controller.rb:14:in `create'
+Started POST "/tweets" for ::1 at 2020-04-26 13:00:10 -0700
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"Covid19 will destroy the world!", "content"=>"This tweet shows how CV19 is quickly decimating every part of society.", "author"=>"The WHO"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:16:in `create'
+  [1m[36mTweet Create (0.8ms)[0m  [1m[32mINSERT INTO "tweets" ("title", "content", "author") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Covid19 will destroy the world!"], ["content", "This tweet shows how CV19 is quickly decimating every part of society."], ["author", "The WHO"]]
+  ↳ app/controllers/tweets_controller.rb:16:in `create'
+  [1m[35m (100.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:16:in `create'
+Completed 201 Created in 109ms (Views: 0.5ms | ActiveRecord: 101.4ms | Allocations: 2325)
+
+
+Started GET "/tweets" for ::1 at 2020-04-26 13:00:14 -0700
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 1068)
+
+
+Started GET "/tweets" for ::1 at 2020-04-26 13:00:22 -0700
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1066)
+
+
