@@ -444,3 +444,25 @@ Processing by TweetsController#index as */*
 Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 1006)
 
 
+Started GET "/tweets" for ::1 at 2020-04-26 13:13:26 -0700
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 4.2ms | Allocations: 3231)
+
+
+Started GET "/tweets" for ::1 at 2020-04-26 13:14:23 -0700
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 3.7ms | Allocations: 3213)
+
+
+Started GET "/tweets/2" for ::1 at 2020-04-26 13:14:26 -0700
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 784)
+
+
