@@ -376,3 +376,34 @@ Processing by TweetsController#index as HTML
 Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1066)
 
 
+Started PUT "/tweets/2" for ::1 at 2020-04-26 13:06:22 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/jb444/ruby_hw/wk20/tweeter_app_api/app/controllers/tweets_controller.rb:27: syntax error, unexpected local variable or method, expecting ')'
+        render(json: {tweet: tweet}, status...
+        ^~~~~~
+/home/jb444/ruby_hw/wk20/tweeter_app_api/app/controllers/tweets_controller.rb:27: syntax error, unexpected ')', expecting `end'
+...: {tweet: tweet}, status: 200))
+...                              ^
+/home/jb444/ruby_hw/wk20/tweeter_app_api/app/controllers/tweets_controller.rb:36: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/tweets_controller.rb:27: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/tweets_controller.rb:27: syntax error, unexpected ')', expecting `end'
+app/controllers/tweets_controller.rb:36: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/tweets_controller.rb:27: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/tweets_controller.rb:27: syntax error, unexpected ')', expecting `end'
+app/controllers/tweets_controller.rb:36: syntax error, unexpected end-of-input, expecting `end'
+Started PUT "/tweets/2" for ::1 at 2020-04-26 13:06:51 -0700
+Processing by TweetsController#update as */*
+  Parameters: {"tweet"=>{"content"=>"They are actually walking there"}, "id"=>"2"}
+  [1m[36mTweet Load (25.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:25:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+  [1m[36mTweet Update (34.4ms)[0m  [1m[33mUPDATE "tweets" SET "content" = $1 WHERE "tweets"."id" = $2[0m  [["content", "They are actually walking there"], ["id", 2]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+  [1m[35m (56.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+Completed 200 OK in 144ms (Views: 0.3ms | ActiveRecord: 121.1ms | Allocations: 5904)
+
+
