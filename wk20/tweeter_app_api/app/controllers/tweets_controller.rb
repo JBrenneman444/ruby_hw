@@ -6,7 +6,8 @@ class TweetsController < ApplicationController
     end
 
     def show
-        
+        tweet = Tweet.find(params[:id])
+        render json: {status: 200, tweet: tweet}
     end
 
 end

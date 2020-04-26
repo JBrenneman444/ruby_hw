@@ -266,3 +266,55 @@ Processing by TweetsController#index as HTML
 Completed 200 OK in 53ms (Views: 45.9ms | ActiveRecord: 5.4ms | Allocations: 3687)
 
 
+Started GET "/tweets" for ::1 at 2020-04-26 12:49:50 -0700
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:5:in `index'
+Completed 200 OK in 13ms (Views: 6.0ms | ActiveRecord: 5.0ms | Allocations: 3206)
+
+
+Started GET "/tweets/1" for ::1 at 2020-04-26 12:49:53 -0700
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 32)
+
+
+Started GET "/tweets/1" for ::1 at 2020-04-26 12:49:57 -0700
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 26)
+
+
+Started GET "/tweets/2" for ::1 at 2020-04-26 12:50:59 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:9:in `show'
+Completed 200 OK in 42ms (Views: 10.4ms | ActiveRecord: 5.6ms | Allocations: 3712)
+
+
+Started GET "/tweets/2" for ::1 at 2020-04-26 12:51:03 -0700
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:9:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 680)
+
+
+Started GET "/tweets/2" for ::1 at 2020-04-26 12:51:46 -0700
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:9:in `show'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 4.5ms | Allocations: 3017)
+
+
+Started GET "/tweets/2" for ::1 at 2020-04-26 12:51:59 -0700
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:9:in `show'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 2992)
+
+
