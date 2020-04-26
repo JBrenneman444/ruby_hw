@@ -27,6 +27,12 @@ class TweetsController < ApplicationController
         render(json: {tweet: tweet}, status: 200)
     end
 
+    def destroy
+        tweet = Tweet.find(params[:id])
+        tweet.destroy()
+        render(json: {tweet: tweet}, status: 204)
+    end
+
     private # Any methods below here
   
     def tweet_params
